@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>きときと整体院｜射水市の整体・KYT専門院</title>
+  <meta name="description" content="富山県射水市の整体院。富山県初のKYT専門整体院。医療現場15年以上の経験と知識を活かしたKYT整体。ボキボキしない優しい施術。体験コース3,000円〜。完全予約制・LINEで予約受付。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --green-dark:  #0c4a8c;
+      --green-mid:   #1a7fc4;
+      --green-light: #5ab4e8;
+      --green-pale:  #d0e8f8;
+      --green-bg:    #eaf4fc;
+      --accent:      #f77f00;
+      --accent-light:#fff3e0;
+      --line-green:  #06c755;
+      --text-dark:   #0a1e30;
+      --text-mid:    #1a4e7a;
+      --text-light:  #5b8db8;
+      --white:       #ffffff;
+      --gray-bg:     #f4f8fc;
+      --shadow:      0 4px 24px rgba(12,74,140,.12);
+      --shadow-lg:   0 8px 40px rgba(12,74,140,.18);
+      --radius:      16px;
+      --radius-sm:   10px;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--text-dark);
+      background: var(--white);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    /* ===== FLOATING LINE BUTTON ===== */
+    .line-float {
+      position: fixed;
+      bottom: 24px;
+      right: 20px;
+      z-index: 9999;
+      animation: bounce 2.5s ease-in-out infinite;
+    }
+    .line-float a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--line-green);
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 22px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 15px;
+      box-shadow: 0 6px 24px rgba(6,199,85,.5);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .line-float a:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 10px 32px rgba(6,199,85,.6); }
+    .line-float svg { width:26px; height:26px; fill:#fff; flex-shrink:0; }
+    @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+    @keyframes pulse-blue { 0%,100%{box-shadow:0 6px 22px rgba(6,199,85,.6)} 50%{box-shadow:0 6px 32px rgba(6,199,85,1)} }
+
+    /* ===== HEADER ===== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 2px solid var(--green-pale);
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 12px rgba(12,74,140,.08);
+    }
+    .header-logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
+    .header-logo img { width:48px; height:48px; object-fit:contain; flex-shrink:0; }
+    .logo-mark {
+      width:44px; height:44px;
+      background: linear-gradient(135deg,var(--green-mid),var(--green-dark));
+      border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      font-size:22px; flex-shrink:0;
+    }
+    .logo-text .main { display:block; font-size:18px; font-weight:700; color:var(--green-dark); line-height:1.2; }
+    .logo-text .sub { display:block; font-size:11px; color:var(--text-light); }
+    nav { display:none; }
+    @media(min-width:700px){
+      nav { display:flex; gap:18px; align-items:center; }
+      nav a { color:var(--text-mid); text-decoration:none; font-size:13px; font-weight:600; transition:color .2s; }
+      nav a:hover { color:var(--green-mid); }
+    }
+    .header-line a {
+      display:flex; align-items:center; gap:8px;
+      background:var(--line-green); color:#fff;
+      padding:9px 16px; border-radius:50px;
+      text-decoration:none; font-weight:700; font-size:13px;
+      box-shadow:0 3px 12px rgba(6,199,85,.35);
+      transition: transform .2s;
+      white-space:nowrap;
+    }
+    .header-line a:hover { transform:scale(1.04); }
+    .header-line svg { width:18px; height:18px; fill:#fff; flex-shrink:0; }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      background: linear-gradient(to bottom, rgba(7,40,85,.55) 0%, rgba(12,74,140,.35) 40%, rgba(7,40,85,.65) 100%);
+    }
+    .hero-bg-img {
+      position:absolute; inset:0;
+      background: url('https://assets.st-note.com/production/uploads/images/249838444/503b4d7d8b12c8b24421f93d2f14cc7c.jpeg') center top/cover no-repeat;
+      opacity:.82;
+    }
+    .hero-orb1 {
+      position:absolute; width:700px; height:700px;
+      background:radial-gradient(circle,rgba(255,255,255,.05) 0%,transparent 70%);
+      border-radius:50%; top:-200px; left:-200px; pointer-events:none;
+    }
+    .hero-orb2 {
+      position:absolute; width:500px; height:500px;
+      background:radial-gradient(circle,rgba(255,255,255,.04) 0%,transparent 70%);
+      border-radius:50%; bottom:-100px; right:-100px; pointer-events:none;
+    }
+    .hero-content {
+      position:relative; z-index:2; padding:52px 36px; max-width:740px;
+      background: rgba(5, 25, 60, 0.72);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,.15);
+      box-shadow: 0 8px 48px rgba(0,0,0,.45);
+    }
+    .hero-badge {
+      display:inline-flex; align-items:center; gap:8px;
+      background:rgba(5,25,60,.75); backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,.4);
+      color:#fff; padding:8px 22px; border-radius:50px;
+      font-size:13px; font-weight:700; margin-bottom:26px;
+      letter-spacing:.06em;
+    }
+    .hero h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(26px, 6vw, 52px);
+      color: #fff;
+      line-height: 1.3;
+      margin-bottom: 18px;
+      text-shadow: 0 2px 8px rgba(0,0,0,.9), 0 4px 24px rgba(0,0,0,.7);
+    }
+    .hero h1 .accent-txt { color: #ffffff; display:block; }
+    .hero-tagline {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(18px, 3.5vw, 30px);
+      color: #a8d8ff;
+      font-weight: 700;
+      letter-spacing: .08em;
+      margin-bottom: 28px;
+      text-shadow: 0 2px 8px rgba(0,0,0,.9);
+    }
+    .hero-sub {
+      font-size: clamp(14px,2.5vw,18px);
+      color: #ffffff;
+      text-shadow: 0 1px 6px rgba(0,0,0,.8);
+      margin-bottom: 12px;
+      line-height:1.8;
+    }
+    .hero-note {
+      font-size:17px; color:#fff; font-weight:700;
+      background: linear-gradient(135deg, #e67e22, #f39c12);
+      display:inline-block; padding:10px 28px; border-radius:50px;
+      margin-bottom:28px; letter-spacing:.04em;
+      box-shadow:0 4px 18px rgba(230,126,34,.55);
+      animation: pulse-orange 2s infinite;
+    }
+    @keyframes pulse-orange {
+      0%,100%{ box-shadow:0 4px 18px rgba(230,126,34,.55); }
+      50%{ box-shadow:0 4px 28px rgba(230,126,34,.9); }
+    }
+    .hero-btns { display:flex; flex-wrap:wrap; gap:14px; justify-content:center; }
+    .btn-line-hero {
+      display:flex; align-items:center; gap:10px;
+      background: var(--line-green);
+      color:#fff; text-decoration:none;
+      padding:16px 32px; border-radius:50px;
+      font-weight:700; font-size:17px;
+      box-shadow:0 6px 28px rgba(6,199,85,.55);
+      transition:transform .2s, box-shadow .2s;
+    }
+    .btn-line-hero:hover { transform:translateY(-3px); box-shadow:0 10px 36px rgba(6,199,85,.65); }
+    .btn-line-hero svg { width:28px; height:28px; fill:#fff; }
+    .btn-ghost {
+      display:flex; align-items:center; gap:8px;
+      border:2px solid rgba(255,255,255,.6);
+      color:#fff; text-decoration:none;
+      padding:16px 28px; border-radius:50px;
+      font-weight:700; font-size:15px;
+      transition: background .2s;
+    }
+    .btn-ghost:hover { background:rgba(255,255,255,.15); }
+    .hero-stats {
+      display:flex; flex-wrap:wrap; gap:16px;
+      justify-content:center; margin-top:44px;
+    }
+    .hero-stat {
+      background:rgba(5,25,60,.75); backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,.3);
+      padding:14px 22px; border-radius:14px; text-align:center; color:#fff;
+      text-shadow: 0 1px 4px rgba(0,0,0,.6);
+    }
+    .hero-stat .num { font-size:26px; font-weight:900; line-height:1; }
+    .hero-stat .lbl { font-size:11px; opacity:.82; margin-top:4px; }
+
+    /* ===== SECTION BASE ===== */
+    section { padding: 80px 20px; }
+    .container { max-width:920px; margin:0 auto; }
+    .section-head { text-align:center; margin-bottom:52px; }
+    .section-head .eyebrow {
+      display:inline-block;
+      color: var(--green-mid); font-size:12px; font-weight:700;
+      letter-spacing:.18em; text-transform:uppercase; margin-bottom:10px;
+    }
+    .section-head h2 {
+      font-family:'Noto Serif JP',serif;
+      font-size: clamp(22px,4vw,34px);
+      color: var(--text-dark); line-height:1.4; margin-bottom:14px;
+    }
+    .section-head h2 .acc { color:var(--green-mid); }
+    .section-head p { color:var(--text-light); font-size:14px; }
+    .divider {
+      width:50px; height:3px;
+      background:linear-gradient(90deg,var(--green-mid),var(--green-light));
+      border-radius:2px; margin:14px auto 0;
+    }
+
+    /* ===== LINE CTA BAND ===== */
+    .line-band {
+      background: linear-gradient(135deg, #07285a, var(--green-dark) 50%, var(--green-mid));
+      padding:48px 20px; text-align:center;
+    }
+    .line-band h3 { color:#fff; font-size:clamp(18px,3vw,26px); font-weight:700; margin-bottom:8px; }
+    .line-band p { color:rgba(255,255,255,.8); font-size:14px; margin-bottom:26px; }
+    .btn-line-band {
+      display:inline-flex; align-items:center; gap:10px;
+      background:var(--line-green); color:#fff;
+      text-decoration:none; padding:16px 40px;
+      border-radius:50px; font-weight:700; font-size:17px;
+      box-shadow:0 6px 24px rgba(6,199,85,.55);
+      transition:transform .2s, box-shadow .2s;
+    }
+    .btn-line-band:hover { transform:scale(1.04); box-shadow:0 10px 32px rgba(6,199,85,.65); }
+    .btn-line-band svg { width:26px;height:26px;fill:#fff; }
+    .band-sub { font-size:12px; color:rgba(255,255,255,.58); margin-top:12px; }
+
+    /* ===== REASONS ===== */
+    .bg-pale { background:var(--green-bg); }
+    .reasons-grid { display:grid; gap:18px; }
+    .reason-card {
+      background:#fff; border-radius:var(--radius);
+      padding:26px 26px 26px 96px; position:relative;
+      box-shadow:var(--shadow);
+      transition:transform .25s, box-shadow .25s;
+      border-left:4px solid var(--green-mid);
+    }
+    .reason-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); }
+    .r-num {
+      position:absolute; left:18px; top:50%; transform:translateY(-50%);
+      width:58px; height:58px;
+      background:linear-gradient(135deg,var(--green-mid),var(--green-dark));
+      border-radius:50%; color:#fff;
+      display:flex; align-items:center; justify-content:center;
+      font-size:22px; font-weight:900; font-family:'Noto Serif JP',serif;
+      flex-shrink:0;
+    }
+    .r-badge {
+      display:inline-block;
+      background:var(--accent-light); color:var(--accent);
+      font-size:11px; font-weight:700; padding:3px 10px; border-radius:20px;
+      margin-bottom:7px;
+    }
+    .reason-card h3 { font-size:17px; font-weight:700; color:var(--green-dark); margin-bottom:8px; }
+    .reason-card p { font-size:14px; color:var(--text-mid); line-height:1.85; }
+
+    /* ===== VOICES ===== */
+    .voices-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:18px; }
+    .v-card {
+      background:var(--gray-bg); border-radius:var(--radius);
+      padding:22px 22px 18px; border:1px solid var(--green-pale);
+      position:relative; transition:box-shadow .2s;
+    }
+    .v-card:hover { box-shadow:var(--shadow); }
+    .v-card.google { border-top:3px solid #4285f4; }
+    .v-quote {
+      position:absolute; top:8px; left:14px;
+      font-size:56px; color:var(--green-pale);
+      font-family:Georgia,serif; line-height:1; pointer-events:none;
+    }
+    .v-text { font-size:14px; line-height:1.9; color:var(--text-dark); margin-bottom:12px; position:relative; z-index:1; }
+    .v-name { font-size:13px; font-weight:700; color:var(--green-dark); }
+    .v-tag {
+      display:inline-block; font-size:11px;
+      padding:2px 10px; border-radius:20px; margin-top:5px;
+      background:var(--green-pale); color:var(--green-mid);
+    }
+    .v-card.google .v-tag { background:#e8f0fe; color:#4285f4; }
+    .v-disc { font-size:11px; color:#bbb; margin-top:8px; text-align:right; }
+
+    /* ===== BA ===== */
+    .ba-grid { display:grid; gap:28px; }
+    .ba-card {
+      background:#fff; border-radius:var(--radius);
+      padding:28px; box-shadow:var(--shadow);
+    }
+    .ba-card h3 { font-size:17px; font-weight:700; color:var(--green-dark); margin-bottom:12px; }
+    .ba-meta { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px; }
+    .ba-tag {
+      font-size:12px; padding:4px 14px; border-radius:20px;
+      background:var(--green-pale); color:var(--green-dark); font-weight:600;
+    }
+    .ba-imgs { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:16px; }
+    .ba-imgs figure { margin:0; }
+    .ba-imgs img { width:100%; border-radius:var(--radius-sm); object-fit:cover; aspect-ratio:4/3; border:2px solid var(--green-pale); }
+    .ba-imgs figcaption { text-align:center; font-size:12px; color:var(--text-light); margin-top:5px; }
+    .ba-result {
+      background:var(--green-pale); border-radius:var(--radius-sm);
+      padding:13px 17px; font-size:14px;
+    }
+    @media(max-width:480px){ .ba-imgs { grid-template-columns:1fr; } }
+
+    /* ===== DIRECTOR ===== */
+    .director-wrap {
+      display:grid; gap:32px;
+    }
+    @media(min-width:680px){ .director-wrap { grid-template-columns:1fr; align-items:start; } }
+    .d-photo {
+      border-radius:var(--radius); overflow:hidden;
+      box-shadow:var(--shadow);
+      background:var(--green-pale);
+      width:25%;
+      max-width:220px;
+      margin:0 auto;
+    }
+    .d-photo img { width:100%; height:auto; object-fit:contain; display:block; border-radius:var(--radius); }
+    .d-photo .ph { display:flex; align-items:center; justify-content:center; font-size:72px; height:100%; opacity:.3; }
+    .d-name { font-family:'Noto Serif JP',serif; font-size:22px; color:var(--green-dark); margin-bottom:4px; }
+    .d-title { font-size:13px; color:var(--text-light); margin-bottom:18px; }
+    .d-text { font-size:14px; color:var(--text-mid); line-height:1.9; margin-bottom:14px; }
+    .d-feats { display:grid; gap:9px; margin-top:14px; }
+    .d-feat {
+      display:flex; align-items:flex-start; gap:10px;
+      background:var(--green-bg); padding:11px 14px; border-radius:var(--radius-sm);
+    }
+    .d-feat-icon { font-size:20px; flex-shrink:0; margin-top:1px; }
+    .d-feat-body strong { display:block; font-size:14px; font-weight:700; color:var(--green-dark); line-height:1.3; }
+    .d-feat-body span { font-size:12px; color:var(--text-light); }
+    .msg-box {
+      background:linear-gradient(135deg,var(--green-pale),#f8fff9);
+      border-left:4px solid var(--green-mid);
+      border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+      padding:18px 20px; margin-top:18px;
+      font-size:14px; color:var(--text-mid); line-height:1.9;
+    }
+    .msg-box .mq { font-size:17px; font-weight:700; color:var(--green-dark); margin-bottom:8px; }
+
+    /* ===== FLOW ===== */
+    .flow-list { display:grid; gap:0; max-width:640px; margin:0 auto; }
+    .flow-step { display:flex; gap:20px; align-items:flex-start; padding-bottom:28px; }
+    .flow-step:last-child { padding-bottom:0; }
+    .f-left { display:flex; flex-direction:column; align-items:center; flex-shrink:0; }
+    .f-num {
+      width:52px; height:52px;
+      background:linear-gradient(135deg,var(--green-mid),var(--green-dark));
+      border-radius:50%; color:#fff;
+      display:flex; align-items:center; justify-content:center;
+      font-size:20px; font-weight:900;
+    }
+    .f-line { width:2px; flex:1; min-height:36px; background:linear-gradient(var(--green-light),transparent); margin-top:5px; }
+    .flow-step:last-child .f-line { display:none; }
+    .f-body { padding-top:6px; }
+    .f-body h3 { font-size:17px; font-weight:700; color:var(--green-dark); margin-bottom:6px; }
+    .f-body p { font-size:14px; color:var(--text-mid); line-height:1.8; }
+    .f-img { margin-top:12px; display:flex; justify-content:center; }
+    .f-img img { width:66.6%; height:auto; display:block; object-fit:contain; border-radius:12px; }
+
+    /* ===== PRICING ===== */
+    /* メイン：通常施術 */
+    .p-main {
+      background:linear-gradient(135deg,#07285a,var(--green-dark));
+      border-radius:var(--radius); padding:40px 36px;
+      text-align:center; color:#fff; margin-bottom:20px;
+      box-shadow:var(--shadow-lg); position:relative; overflow:hidden;
+    }
+    .p-main::before {
+      content:''; position:absolute; inset:0;
+      background:radial-gradient(circle at 70% 30%,rgba(255,255,255,.07),transparent 60%);
+    }
+    .p-main-name {
+      font-size:16px; font-weight:700; letter-spacing:.1em;
+      color:rgba(255,255,255,.75); margin-bottom:10px; text-transform:uppercase;
+    }
+    .p-main-amt {
+      font-size:clamp(44px,8vw,72px); font-weight:900; line-height:1;
+      color:#fff; margin-bottom:6px;
+    }
+    .p-main-unit { font-size:15px; color:rgba(255,255,255,.7); margin-bottom:18px; }
+    .p-main-desc { font-size:15px; color:rgba(255,255,255,.88); line-height:1.8; margin-bottom:28px; max-width:520px; margin-left:auto; margin-right:auto; }
+    /* サブ：体験コース・サポート制度 */
+    .p-sub-grid { display:grid; gap:16px; }
+    @media(min-width:600px){ .p-sub-grid { grid-template-columns:1fr 1fr; } }
+    .p-sub {
+      background:var(--gray-bg); border-radius:var(--radius);
+      padding:22px 20px; text-align:center;
+      border:2px solid var(--green-pale);
+      transition:transform .2s, box-shadow .2s;
+    }
+    .p-sub:hover { transform:translateY(-3px); box-shadow:var(--shadow); }
+    .p-sub-name { font-size:13px; font-weight:700; color:var(--green-dark); margin-bottom:6px; }
+    .p-sub-amt { font-size:26px; font-weight:900; color:var(--green-dark); line-height:1; }
+    .p-sub-unit { font-size:11px; color:var(--text-light); margin-bottom:10px; }
+    .p-sub-desc { font-size:12px; color:var(--text-mid); line-height:1.7; margin-bottom:14px; }
+    .p-btn {
+      display:block; text-decoration:none;
+      padding:11px 20px; border-radius:50px;
+      font-weight:700; font-size:13px; text-align:center;
+      transition:opacity .2s;
+    }
+    .p-btn:hover { opacity:.85; }
+    .p-btn-green { background:var(--line-green); color:#fff; }
+    .p-btn-white { background:#fff; color:var(--green-dark); }
+    .p-btn-outline { background:var(--green-mid); color:#fff; }
+    .p-note {
+      background:var(--green-bg); border-radius:var(--radius-sm);
+      padding:18px 22px; margin-top:26px;
+      font-size:13px; color:var(--text-mid);
+      border-left:3px solid var(--green-mid); line-height:1.8;
+    }
+
+    /* ===== ACCESS ===== */
+    .access-grid { display:grid; gap:28px; }
+    @media(min-width:680px){ .access-grid { grid-template-columns:1fr 1fr; } }
+    .a-h3 { font-size:18px; font-weight:700; color:var(--green-dark); margin-bottom:14px; }
+    .a-item { display:flex; gap:12px; align-items:flex-start; margin-bottom:13px; font-size:14px; color:var(--text-mid); }
+    .a-icon { font-size:20px; flex-shrink:0; margin-top:2px; }
+    .a-warn {
+      background:#fffbeb; border:2px solid #fcd34d;
+      border-radius:var(--radius-sm); padding:14px 17px; margin-top:14px;
+      font-size:13px; color:#78350f;
+    }
+    .a-warn strong { display:block; font-size:14px; margin-bottom:5px; }
+    .map-box { border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); aspect-ratio:4/3; }
+    .map-box iframe { width:100%; height:100%; border:0; display:block; }
+    .route-imgs { display:grid; gap:12px; margin-top:18px; }
+    .r-img-card { background:#fff; border-radius:var(--radius-sm); padding:10px; box-shadow:0 2px 12px rgba(0,0,0,.07); }
+    .r-img-card img { width:100%; border-radius:8px; display:block; border:1px solid var(--green-pale); }
+    .r-img-card p { font-size:12px; color:var(--text-mid); margin-top:7px; text-align:center; }
+
+    /* ===== HOURS TABLE ===== */
+    .h-table { width:100%; border-collapse:collapse; font-size:15px; margin-top:16px; }
+    .h-table th,.h-table td { padding:11px 14px; border:1px solid var(--green-pale); text-align:center; }
+    .h-table th { background:var(--green-dark); color:#fff; font-weight:700; }
+    .h-table tr:nth-child(even) td { background:var(--green-pale); }
+    .h-open { color:var(--green-dark); font-weight:700; }
+    .h-close { color:#bbb; }
+
+    /* ===== NOTICE ===== */
+    .notice-list { list-style:none; display:grid; gap:11px; }
+    .notice-list li {
+      display:flex; gap:10px; align-items:flex-start;
+      font-size:14px; color:var(--text-mid);
+      background:var(--gray-bg); padding:13px 16px; border-radius:var(--radius-sm);
+    }
+    .notice-list li::before { content:'⚠'; font-size:16px; flex-shrink:0; }
+
+    /* ===== FINAL CTA ===== */
+    .final-cta {
+      background:linear-gradient(160deg,#07285a 0%,var(--green-dark) 50%,var(--green-mid) 100%);
+      padding:88px 20px; text-align:center;
+    }
+    .final-cta h2 {
+      font-family:'Noto Serif JP',serif;
+      font-size:clamp(22px,4vw,36px); color:#fff;
+      margin-bottom:14px; line-height:1.5;
+    }
+    .final-cta p { color:rgba(255,255,255,.8); font-size:15px; margin-bottom:30px; }
+    .final-cta .note-sub { font-size:12px; color:rgba(255,255,255,.55); margin-top:14px; }
+    .tags { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:24px; }
+    .tag { background:rgba(255,255,255,.13); color:rgba(255,255,255,.82); font-size:12px; font-weight:600; padding:5px 14px; border-radius:20px; }
+
+    /* ===== FOOTER ===== */
+    footer { background:#111c14; padding:32px 20px; text-align:center; color:rgba(255,255,255,.45); font-size:13px; }
+    footer .f-name { font-size:15px; font-weight:700; color:rgba(255,255,255,.75); margin-bottom:5px; }
+    footer a { color:var(--green-light); text-decoration:none; }
+
+    /* ===== ANIMATIONS ===== */
+    .fade-up { opacity:0; transform:translateY(26px); transition:opacity .65s ease,transform .65s ease; }
+    .fade-up.vis { opacity:1; transform:translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- FLOATING LINE -->
+<div class="line-float">
+  <a href="https://linevoom.line.me/user/_dS1NRYmkLk4_KUhWC9P3d1DmcpoeGOwIdPqc95s?utm_medium=osx&utm_source=desktop&utm_campaign=OA_Profile" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.145 2 11.259c0 4.213 2.733 7.794 6.686 9.333.245.09.46.172.46.172s-.032.12-.097.311c-.057.177-.146.46-.146.46s-.021.11.117.151c.138.04.594-.082.594-.082s7.41-4.139 10.003-6.85C20.883 13.37 22 12.374 22 11.259 22 6.145 17.523 2 12 2z"/></svg>
+    LINEで予約・相談
+  </a>
+</div>
+
+<!-- HEADER -->
+<header>
+  <a class="header-logo" href="#">
+    <img src="./logo.png" alt="きときと整体院ロゴ" class="logo-img" onerror="this.src='./logo.svg'"/>
+    <div class="logo-text">
+      <span class="main">きときと整体院</span>
+      <span class="sub">富山県射水市 ／ KYT専門整体</span>
+    </div>
+  </a>
+  <nav>
+    <a href="#reasons">選ばれる理由</a>
+    <a href="#voices">お客様の声</a>
+    <a href="#pricing">料金</a>
+    <a href="#access">アクセス</a>
+  </nav>
+  <div class="header-line">
+    <a href="https://linevoom.line.me/user/_dS1NRYmkLk4_KUhWC9P3d1DmcpoeGOwIdPqc95s?utm_medium=osx&utm_source=desktop&utm_campaign=OA_Profile" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.145 2 11.259c0 4.213 2.733 7.794 6.686 9.333.245.09.46.172.46.172s-.032.12-.097.311c-.057.177-.146.46-.146.46s-.021.11.117.151c.138.04.594-.082.594-.082s7.41-4.139 10.003-6.85C20.883 13.37 22 12.374 22 11.259 22 6.145 17.523 2 12 2z"/></svg>
+      LINE予約
+    </a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-img"></div>
+  <div class="hero-orb1"></div>
+  <div class="hero-orb2"></div>
+  <div class="hero-content">
+    <h1>
+      <span class="accent-txt">きときと整体院</span>
+    </h1>
+    <p class="hero-tagline">あなたの体の可能性を、ここから。</p>
+    <p class="hero-note">👇 友達登録（フォロー）して予約して下さい！</p>
+    <p style="font-size:12px;color:rgba(255,255,255,.95);margin-bottom:28px;margin-top:-18px;text-shadow:0 1px 4px rgba(0,0,0,.8);">※完全予約制 ／ ご予約・ご相談はLINEより</p>
+    <div class="hero-btns">
+      <a class="btn-line-hero" href="https://linevoom.line.me/user/_dS1NRYmkLk4_KUhWC9P3d1DmcpoeGOwIdPqc95s?utm_medium=osx&utm_source=desktop&utm_campaign=OA_Profile" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.145 2 11.259c0 4.213 2.733 7.794 6.686 9.333.245.09.46.172.46.172s-.032.12-.097.311c-.057.177-.146.46-.146.46s-.021.11.117.151c.138.04.594-.082.594-.082s7.41-4.139 10.003-6.85C20.883 13.37 22 12.374 22 11.259 22 6.145 17.523 2 12 2z"/></svg>
+        LINEで相談・予約する（無料）
+      </a>
+      <a class="btn-ghost" href="#reasons">選ばれる理由を見る ↓</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="num">15<small style="font-size:14px">年+</small></div>
+        <div class="lbl">医療現場での経験</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">富山<small style="font-size:13px">県初</small></div>
+        <div class="lbl">KYT導入整体院</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">¥3,000<small style="font-size:12px">〜</small></div>
+        <div class="lbl">体験コースあり</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 7 REASONS -->
+<section class="bg-pale" id="reasons">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="eyebrow">Why Choose Us</span>
+      <h2>射水市の整体で<span class="acc">選ばれる</span><br>７つの理由</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="reasons-grid">
+
+      <div class="reason-card fade-up">
+        <div class="r-num">1</div>
+        <span class="r-badge">🏆 富山県初導入</span>
+        <h3>富山県初・KYT専門の整体院</h3>
+        <p>2024年から富山県で初めてKYTを導入した整体院です。<br>
+        YouTube登録者<strong>12万人</strong>を超えるKen Yamamoto氏が考案した「KYT」と「KXT」という整体のテクニックを組み合わせた整体です。<br>
+        医療機関で培った経験と知識を活かし、体の構造と動きを分析しながら痛みの原因にアプローチします。<br>
+        富山県でも数少ないKYT専門整体として、「一度で変化を実感できる施術」を目指しています。</p>
+      </div>
+
+      <div class="reason-card fade-up">
+        <div class="r-num">2</div>
+        <span class="r-badge">😊 初めてでも安心</span>
+        <h3>初めてでも安心！</h3>
+        <p>「どんな先生だろう…」「怖い先生だったらどうしよう」という不安、ありますよね？当院では<strong>優しく丁寧な対応</strong>を心がけています。リラックスしてご来院いただけます。</p>
+      </div>
+
+      <div class="reason-card fade-up">
+        <div class="r-num">3</div>
+        <span class="r-badge">🌱 体験コース3,000円〜</span>
+        <h3>高い！？と思う方には体験コースをご用意</h3>
+        <p><strong>体験コース（問診・施術含め約20分、3,000円）</strong>をご用意。継続して通いたい方向けの【サポート制度】もあります。気軽に試して、納得してから続けていただけます。</p>
+      </div>
+
+      <div class="reason-card fade-up">
+        <div class="r-num">4</div>
+        <span class="r-badge">👐 バキバキしない施術</span>
+        <h3>ボキボキしない整体！</h3>
+        <p>「ボキボキされるのが怖い…」そんな心配は無用です。<strong>ボキボキしない優しい手技</strong>で施術します。お子さまから高齢の方まで安心して受けていただけます。</p>
+      </div>
+
+      <div class="reason-card fade-up">
+        <div class="r-num">5</div>
+        <span class="r-badge">👩 女性多数来院中</span>
+        <h3>女性にも安心！</h3>
+        <p>「女性ひとりで行くのは不安」という声もよく聞きます。当院は<strong>女性のお客様の方が多く</strong>来院されています。安心して施術を受けていただけます。</p>
+      </div>
+
+      <div class="reason-card fade-up">
+        <div class="r-num">6</div>
+        <span class="r-badge">📋 宿題エクササイズ付き</span>
+        <h3>整体後"元に戻る"のが不安な方へ</h3>
+        <p>「またすぐ戻るんでしょ？」と思う方も多いはず。当院では<strong>症状に合わせた宿題エクササイズ</strong>をお渡しし、変化を長持ちさせるサポートを行っています。</p>
+      </div>
+
+      <div class="reason-card fade-up">
+        <div class="r-num">7</div>
+        <span class="r-badge">🏥 国家資格保持者による施術</span>
+        <h3>専門家による本格ケア</h3>
+        <p>他の治療院などで改善しなかった痛みも、<strong>医療現場で15年以上の経験と専門知識を持つ院長</strong>が整体で根本からケアします。</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VOICES -->
+<section id="voices">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="eyebrow">Customer Voice</span>
+      <h2>お客様の<span class="acc">声</span></h2>
+      <p>※個人の感想です。結果には個人差があります。</p>
+      <div class="divider"></div>
+    </div>
+    <div class="voices-grid">
+
+      <div class="v-card fade-up">
+        <div class="v-quote">"</div>
+        <p class="v-text">あぐらがかけるようになりました。左側の肩こりがひどかったのがなおりました。腰が楽になりました。</p>
+        <div class="v-name">M.K様（70歳代・女性）</div>
+        <span class="v-tag">腰痛・肩こり</span>
+        <p class="v-disc">※結果には個人差があります</p>
+      </div>
+
+      <div class="v-card fade-up">
+        <div class="v-quote">"</div>
+        <p class="v-text">具体的に身体がどうなっているのか知りたかったので、とても参考になりました。専門の人の意見と自分の感覚が一致することで身体のケアができると感じました。</p>
+        <div class="v-name">Y.T様（48歳・男性）</div>
+        <span class="v-tag">セルフケア</span>
+        <p class="v-disc">※結果には個人差があります</p>
+      </div>
+
+      <div class="v-card google fade-up">
+        <div class="v-quote">"</div>
+        <p class="v-text">先生はとても親身になって施術して下さいます。優しさが溢れ出てますよ！首凝りでいろんな整体に行きましたが、全身から調整していただき体の血流が良くなりポカポカして痛いところも緩和し、<strong>結果が出る整体院</strong>だと思います。是非一度、行ってみてください。</p>
+        <div class="v-name">Googleクチコミより</div>
+        <span class="v-tag">⭐ Google口コミ</span>
+        <p class="v-disc">※結果には個人差があります</p>
+      </div>
+
+      <div class="v-card fade-up">
+        <div class="v-quote">"</div>
+        <p class="v-text">（施術が）全く痛くないのに、とっても楽になりました。</p>
+        <div class="v-name">M.N様（女性）</div>
+        <span class="v-tag">痛みのない施術</span>
+        <p class="v-disc">※結果には個人差があります</p>
+      </div>
+
+      <div class="v-card fade-up">
+        <div class="v-quote">"</div>
+        <p class="v-text">長年、悩んできた違和感がなくなり、体がもとに戻った感じがします。ありがとうございます。</p>
+        <div class="v-name">N様（56歳・男性）</div>
+        <span class="v-tag">長年の悩み改善</span>
+        <p class="v-disc">※結果には個人差があります</p>
+      </div>
+
+      <div class="v-card google fade-up">
+        <div class="v-quote">"</div>
+        <p class="v-text">ゴルフで痛めた腰と足首の治療でお世話になりました。KYTという施術法を使っており、<strong>驚くほどスムーズに痛みが軽減</strong>されました。特に腰の可動域が広がり、スイングの違和感もなくなって感動しました。スポーツでの痛みに悩んでいる方におすすめします！</p>
+        <div class="v-name">Googleクチコミより</div>
+        <span class="v-tag">⭐ Google口コミ</span>
+        <p class="v-disc">※結果には個人差があります</p>
+      </div>
+
+      <div class="v-card fade-up">
+        <div class="v-quote">"</div>
+        <p class="v-text">少しでも良くなればと思って治療を受けましたが、<strong>期待以上の効果でびっくり</strong>しました。ありがとうございました。</p>
+        <div class="v-name">H.F様（81歳）</div>
+        <span class="v-tag">期待以上の効果</span>
+        <p class="v-disc">※結果には個人差があります</p>
+      </div>
+
+      <div class="v-card fade-up">
+        <div class="v-quote">"</div>
+        <p class="v-text">施術前が10だとしたら3ぐらいに減り、ものすごく楽になりました。上を向いた時の首後ろの痛みはなくなりました。腰が1番つらかったので<strong>感激</strong>です。</p>
+        <div class="v-name">S様（50歳代・女性 ／ LINE感想）</div>
+        <span class="v-tag">腰痛・首痛</span>
+        <p class="v-disc">※結果には個人差があります</p>
+      </div>
+
+      <div class="v-card fade-up">
+        <div class="v-quote">"</div>
+        <p class="v-text">腰回りと背中が軽くなった。期待以上でした。感謝。</p>
+        <div class="v-name">S.K様（男性）</div>
+        <span class="v-tag">腰痛・背中</span>
+        <p class="v-disc">※結果には個人差があります</p>
+      </div>
+
+      <div class="v-card google fade-up">
+        <div class="v-quote">"</div>
+        <p class="v-text">82歳の父親を連れて行きました。「カラダが痛いのは歳のせいで仕方ない」と半信半疑でしたが、<strong>「整体とはいいものだ！」</strong>に変わるくらいに今では体が楽になったと喜んでます。お悩みを抱えた方は一度診てもらっては？思いがけずスッキリするかもです。</p>
+        <div class="v-name">Googleクチコミより（82歳のお父様）</div>
+        <span class="v-tag">⭐ Google口コミ</span>
+        <p class="v-disc">※結果には個人差があります</p>
+      </div>
+
+      <div class="v-card fade-up">
+        <div class="v-quote">"</div>
+        <p class="v-text">KYTを受けたくてネットで探して施術を受けました。すごく優しい手技で、身体も軽くなりました。ありがとうございます。</p>
+        <div class="v-name">かっきー様（36歳・女性）</div>
+        <span class="v-tag">KYT目的</span>
+        <p class="v-disc">※結果には個人差があります</p>
+      </div>
+
+      <div class="v-card fade-up">
+        <div class="v-quote">"</div>
+        <p class="v-text">硬い身体が段々柔軟されてく感じがあり終始気持ち良い施術でした。終わった後はエクササイズも教えていただき、<strong>大変満足</strong>しました。定期的にお願いしたいです。</p>
+        <div class="v-name">小木曽 功様（43歳）</div>
+        <span class="v-tag">柔軟性改善</span>
+        <p class="v-disc">※結果には個人差があります</p>
+      </div>
+
+      <div class="v-card fade-up">
+        <div class="v-quote">"</div>
+        <p class="v-text">続いていた首痛がやわらぎました！びっくりです！</p>
+        <div class="v-name">J様（42歳・女性）</div>
+        <span class="v-tag">首痛</span>
+        <p class="v-disc">※結果には個人差があります</p>
+      </div>
+
+      <div class="v-card fade-up">
+        <div class="v-quote">"</div>
+        <p class="v-text">優しい先生で、初めての経験ですが左肩の痛みが和らいだ感じです。しばらく通いたいと思います。</p>
+        <div class="v-name">S.O様（65歳）</div>
+        <span class="v-tag">肩の痛み</span>
+        <p class="v-disc">※結果には個人差があります</p>
+      </div>
+
+      <div class="v-card fade-up">
+        <div class="v-quote">"</div>
+        <p class="v-text">丁寧にみていただき、ありがとうございました。痛みのあるところも、楽になりました。宿題をしっかりしていきたいです。</p>
+        <div class="v-name">Y.K様（59歳）</div>
+        <span class="v-tag">丁寧な施術</span>
+        <p class="v-disc">※結果には個人差があります</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="bg-pale" id="before-after">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="eyebrow">Before / After</span>
+      <h2>ビフォーアフター<br><span class="acc">施術前後の変化例</span></h2>
+      <p>※写真はご本人の許可をいただき掲載しています。結果には個人差があります。</p>
+      <div class="divider"></div>
+    </div>
+    <div class="ba-grid">
+
+      <div class="ba-card fade-up">
+        <h3>症例① 左肩の痛み</h3>
+        <div class="ba-meta">
+          <span class="ba-tag">症状：左肩の痛み</span>
+          <span class="ba-tag">症状期間：約2か月</span>
+          <span class="ba-tag">来院：1回目</span>
+        </div>
+        <div class="ba-imgs" style="display:block;">
+          <figure style="margin:0;">
+            <img src="shorei1.webp" alt="左肩の痛み 施術前後" style="width:100%;height:auto;border-radius:12px;display:block;object-fit:contain;" />
+            <figcaption style="text-align:center;margin-top:8px;font-size:13px;color:var(--text-light);">
+              左：施術前 Before　／　右：施術後 After
+            </figcaption>
+          </figure>
+        </div>
+        <div class="ba-result">✅ <strong>1回の施術</strong>で左肩の可動域と痛みに大きな改善が見られました。</div>
+      </div>
+
+      <div class="ba-card fade-up">
+        <h3>症例② 左肩の痛み（約半年の症状）</h3>
+        <div class="ba-meta">
+          <span class="ba-tag">症状：左肩の痛み</span>
+          <span class="ba-tag">症状期間：約半年</span>
+          <span class="ba-tag">来院：2回目</span>
+        </div>
+        <div class="ba-imgs" style="display:block;">
+          <figure style="margin:0;">
+            <img src="shorei2.webp?v=3" alt="左肩の痛み（約半年）施術前後" style="width:100%;height:auto;border-radius:12px;display:block;object-fit:contain;" />
+            <figcaption style="text-align:center;margin-top:8px;font-size:13px;color:var(--text-light);">
+              左：施術前 Before　／　右：施術後 After
+            </figcaption>
+          </figure>
+        </div>
+        <div class="ba-result">✅ 約半年の痛みが<strong>2回の施術</strong>で大きく改善されました。</div>
+      </div>
+
+      <div class="ba-card fade-up">
+        <h3>症例③ 首の痛み・可動域制限</h3>
+        <div class="ba-meta">
+          <span class="ba-tag">症状：首の痛み</span>
+          <span class="ba-tag">来院：3回目（約3ヶ月ぶり）</span>
+        </div>
+        <div style="background:var(--gray-bg);border-radius:var(--radius-sm);padding:12px 16px;margin-bottom:14px;font-size:14px;color:var(--text-mid);">
+          <strong>状態：</strong>上を向く動作の際に首の痛みがあり、可動域が制限。背中（胸椎）の硬さも見られました。
+        </div>
+        <div class="ba-imgs" style="display:block;">
+          <figure style="margin:0;">
+            <img src="shorei3.webp" alt="首の痛み 施術前後" style="width:100%;height:auto;border-radius:12px;display:block;object-fit:contain;" />
+            <figcaption style="text-align:center;margin-top:8px;font-size:13px;color:var(--text-light);">
+              左：施術前 Before　／　右：施術後 After
+            </figcaption>
+          </figure>
+        </div>
+        <div class="ba-result">✅ 施術後、<strong>上を向く動作での痛みが軽減し、可動域も改善</strong>されました。</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DIRECTOR -->
+<section id="director">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="eyebrow">About Director</span>
+      <h2>院長<span class="acc">あいさつ</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="director-wrap">
+      <div class="d-photo fade-up">
+        <img src="director.webp" alt="院長 石井健太郎 と Ken Yamamoto氏" loading="lazy" onerror="this.style.display='none';document.querySelector('.d-photo .ph').style.display='flex'" />
+        <div class="ph" style="display:none;">👨‍⚕️</div>
+      </div>
+      <div class="fade-up">
+        <h2 class="d-name">石井 健太郎</h2>
+        <p class="d-title">きときと整体院 院長 ／ 整体師</p>
+        <p class="d-text">はじめまして。「きときと整体院」の石井　健太郎です。<br>
+        私は国家資格を持つ理学療法士として、病院などで<strong>20年近く</strong>勤務してきました。<br>
+        現在、Ken Yamamoto氏が主催するセミナーで整体技術の研鑽を続けており、KYTベーシックセミナー、KYTアドバンスセミナー、KXTセミナー受講済みです。</p>
+        <div class="d-feats">
+          <div class="d-feat"><span class="d-feat-icon">🏆</span><div class="d-feat-body"><strong>富山県内でも数少ないKYT＋KXT導入院</strong></div></div>
+          <div class="d-feat"><span class="d-feat-icon">📋</span><div class="d-feat-body"><strong>国家資格保持者による安心施術</strong></div></div>
+          <div class="d-feat"><span class="d-feat-icon">✋</span><div class="d-feat-body"><strong>オーダーメイドの施術</strong></div></div>
+          <div class="d-feat"><span class="d-feat-icon">📅</span><div class="d-feat-body"><strong>平日は忙しい方の"週末ケア"に対応</strong></div></div>
+        </div>
+        <p class="d-text" style="margin-top:16px;">腰・膝・肩などの悩みに関することはお気軽にご相談いただければ幸いです。</p>
+        <div class="msg-box">
+          <p class="mq">「もっと丁寧に診てあげたい」</p>
+          <p>病院で働く中で、ずっと心の中にあった気持ちがあります。<br>
+          現場では、一人ひとりに十分な時間をかけることが難しく、また流れ作業のようなリハビリや施術になっていることも正直少なくありません。<br>
+          だからこそ、本当に必要なケアを届けたいという想いが強くなり、整体という新しい形でサポートを始めました。</p>
+          <p style="margin-top:10px;">私は、「病院に行くレベルになる前に予防をしてあげたい」、また「つらい痛みや不調に苦しむ方の力になりたい」と心から思っています。<br>
+          また、病院や接骨院、他の整体院に通っても改善がみられなかった方の<strong>"最後の砦"でありたい</strong>――そんな覚悟で日々施術に向き合っています。</p>
+          <p style="margin-top:10px;">あなたの身体の"本当の原因"を見極め、根本から整えることで、前向きな毎日を取り戻すお手伝いをさせていただきます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section class="bg-pale" id="flow">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="eyebrow">Treatment Flow</span>
+      <h2>施術の<span class="acc">流れ</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="flow-list">
+      <div class="flow-step fade-up">
+        <div class="f-left"><div class="f-num">1</div><div class="f-line"></div></div>
+        <div class="f-body">
+          <h3>💬 カウンセリング</h3>
+          <p>お悩みや生活背景を丁寧に伺います。どんな些細なことでもお話しください。</p>
+        </div>
+      </div>
+      <div class="flow-step fade-up">
+        <div class="f-left"><div class="f-num">2</div><div class="f-line"></div></div>
+        <div class="f-body">
+          <h3>🔍 検査</h3>
+          <p>姿勢・筋肉の状態・関節の可動域をチェック。痛みの根本原因を分析します。</p>
+        </div>
+      </div>
+      <div class="flow-step fade-up">
+        <div class="f-left"><div class="f-num">3</div><div class="f-line"></div></div>
+        <div class="f-body">
+          <h3>🙌 施術</h3>
+          <p>バキバキしない優しい手技のKYT整体。体の構造に合わせたオーダーメイド施術です。</p>
+          <div class="f-img">
+            <img src="flow.webp" alt="施術風景" />
+          </div>
+        </div>
+      </div>
+      <div class="flow-step fade-up">
+        <div class="f-left"><div class="f-num">4</div><div class="f-line"></div></div>
+        <div class="f-body">
+          <h3>📝 アドバイス</h3>
+          <p>症状に合わせた宿題エクササイズをお渡し。セルフケアや生活習慣もサポートします。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="eyebrow">Menu &amp; Price</span>
+      <h2>メニュー<span class="acc">料金</span></h2>
+      <div class="divider"></div>
+    </div>
+    <!-- 通常施術：メイン大カード -->
+    <div class="p-main fade-up">
+      <div class="p-main-name">通常施術</div>
+      <div class="p-main-amt">¥10,000</div>
+      <div class="p-main-unit">税込 ／ 1回</div>
+      <p class="p-main-desc">洗練された技術で体の本来の状態を引き出します。<br>お体の状態に合わせて丁寧に施術いたします。</p>
+      <a class="p-btn p-btn-white" href="https://linevoom.line.me/user/_dS1NRYmkLk4_KUhWC9P3d1DmcpoeGOwIdPqc95s?utm_medium=osx&utm_source=desktop&utm_campaign=OA_Profile" target="_blank" rel="noopener">LINEで予約する</a>
+    </div>
+
+    <!-- 体験コース・サポート制度：小カード2列 -->
+    <div class="p-sub-grid">
+
+      <div class="p-sub fade-up">
+        <div class="p-sub-name">体験コース</div>
+        <div class="p-sub-amt">¥3,000</div>
+        <div class="p-sub-unit">税込 ／ 初回限定・1日2名限定</div>
+        <p class="p-sub-desc">初めての方専用！問診＋施術含め約20分。まずは試してみたい方へ。</p>
+      </div>
+
+      <div class="p-sub fade-up">
+        <div class="p-sub-name">サポート制度</div>
+        <div class="p-sub-amt">¥5,000</div>
+        <div class="p-sub-unit">税込 ／ 1回（月4回以上）</div>
+        <p class="p-sub-desc">定期的に体を整えたい方向けの特別プラン。継続メンテナンスにおすすめ。</p>
+      </div>
+
+    </div>
+    <div class="p-note fade-up">
+      🙏 <strong>安心のポリシー</strong>：当院では<strong>無理な通院のご提案・回数券の販売・物販の勧誘などは一切行いません。</strong>お一人おひとりのペースに寄り添いながら、誠実に対応いたします。
+    </div>
+  </div>
+</section>
+
+<!-- LINE BAND 2 -->
+<div class="line-band">
+  <h3>🟢 体験コース 3,000円〜 受付中！</h3>
+  <p>「体験コースを希望します」とLINEでメッセージを送るだけ。1日2名限定です。</p>
+  <a class="btn-line-band" href="https://linevoom.line.me/user/_dS1NRYmkLk4_KUhWC9P3d1DmcpoeGOwIdPqc95s?utm_medium=osx&utm_source=desktop&utm_campaign=OA_Profile" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.145 2 11.259c0 4.213 2.733 7.794 6.686 9.333.245.09.46.172.46.172s-.032.12-.097.311c-.057.177-.146.46-.146.46s-.021.11.117.151c.138.04.594-.082.594-.082s7.41-4.139 10.003-6.85C20.883 13.37 22 12.374 22 11.259 22 6.145 17.523 2 12 2z"/></svg>
+    今すぐLINEで予約する
+  </a>
+  <p class="band-sub">👆 友達登録（フォロー）して予約して下さい。<br>お支払いは現金のみ ／ 保険適応外</p>
+</div>
+
+<!-- ACCESS -->
+<section id="access">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="eyebrow">Access &amp; Hours</span>
+      <h2>アクセス<span class="acc">・営業時間</span></h2>
+      <div class="divider"></div>
+    </div>
+    <!-- 基本情報 + 営業時間 -->
+    <div class="access-grid fade-up">
+      <div>
+        <h3 class="a-h3">📍 所在地・アクセス</h3>
+        <div class="a-item"><span class="a-icon">🏠</span><div><strong>富山県射水市黒河3805</strong><br><small style="color:#aaa;">（自宅で整体を行っております。完全予約制です。）</small></div></div>
+        <div class="a-item"><span class="a-icon">🚗</span><div>歌の森小学校より<strong>車で2〜3分</strong></div></div>
+        <div class="a-item"><span class="a-icon">🅿</span><div>駐車場あり<br><small style="color:#aaa;">※駐車場等で起きた事故につきましては一切責任を負いません</small></div></div>
+        <div class="a-item"><span class="a-icon">🪧</span><div>看板はありません。予約時間になりましたらこちらから外に出てご案内します。</div></div>
+      </div>
+      <div>
+        <h3 class="a-h3">🕘 営業時間</h3>
+        <table class="h-table">
+          <thead>
+            <tr><th>曜日</th><th>営業</th><th>時間</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>月〜金</td><td class="h-close">原則休業</td><td><small>夕方以降は相談可</small></td></tr>
+            <tr><td><strong>土・日</strong></td><td class="h-open">✅ 営業</td><td class="h-open"><strong>9:00〜18:00</strong></td></tr>
+            <tr><td><strong>祝日</strong></td><td class="h-open">✅ 営業</td><td class="h-open"><strong>9:00〜18:00</strong></td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:12px;color:var(--text-light);margin-top:10px;">平日夕方以降のご希望はLINEでご相談ください。継続施術ご希望の方には週末をご案内しております。</p>
+      </div>
+    </div>
+
+    <!-- ナビ警告 -->
+    <div class="a-warn fade-up" style="margin-top:28px;">
+      <strong>⚠️ ナビをご利用の方へ必ずお読みください</strong><br>
+      ナビで案内される道は狭く、乗用車が通りづらい場合があります。以下のルート案内をご参考ください。
+    </div>
+
+    <!-- こちらへどうぞ -->
+    <div class="fade-up" style="margin-top:28px;">
+      <h3 class="a-h3" style="color:var(--green-dark);margin-bottom:14px;">✅ こちらへどうぞ</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:16px;">
+        <div class="r-img-card">
+          <img src="route1.webp" alt="ルート案内1" loading="lazy" style="width:100%;border-radius:8px;display:block;" />
+          <p>🚗 黒河の交差点を北方向へ250m程度直進してください。</p>
+        </div>
+        <div class="r-img-card">
+          <img src="route2.webp" alt="ルート案内2" loading="lazy" style="width:100%;border-radius:8px;display:block;" />
+          <p>🚗 歌の森小学校側から来られる場合、赤矢印のように右折して、その後約200m程直進してください</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 入らないでください -->
+    <div class="fade-up" style="margin-top:28px;">
+      <div style="background:#fff1f2;border:2px solid #fca5a5;border-radius:var(--radius-sm);padding:14px 18px;margin-bottom:14px;">
+        <strong style="color:#dc2626;">⚠️ この道には入らないでください！道が狭くなり危険です</strong>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;">
+        <div class="r-img-card">
+          <img src="route_ng1.webp" alt="進入禁止ルート1" loading="lazy" style="width:100%;border-radius:8px;display:block;" />
+        </div>
+        <div class="r-img-card">
+          <img src="route_ng2.webp" alt="進入禁止ルート2" loading="lazy" style="width:100%;border-radius:8px;display:block;" />
+        </div>
+        <div class="r-img-card">
+          <img src="route_ng3.webp" alt="進入禁止ルート3" loading="lazy" style="width:100%;border-radius:8px;display:block;" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOTICE -->
+<section class="bg-pale" id="notice">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="eyebrow">Notice</span>
+      <h2>注意<span class="acc">事項</span></h2>
+      <div class="divider"></div>
+    </div>
+    <ul class="notice-list">
+      <li>施術効果には個人差があります。</li>
+      <li>体調や症状によっては施術をお断りする場合があります。</li>
+      <li>施術後に眠気やだるさを感じることがあります。</li>
+      <li>保険適応外です。</li>
+      <li>お支払いは<strong>現金のみ</strong>でお願いします。</li>
+      <li>気になることがあれば、遠慮なくご相談ください。</li>
+      <li>当院の施術は医療行為ではなく、整体による身体ケアを目的としています。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="contact">
+  <h2>
+    痛みや不調でお悩みなら<br>
+    まずはお気軽にご相談ください
+  </h2>
+  <p>ご相談・空き状況の確認・ご予約はすべてLINEから。<br>長年の痛みや痺れについても、お気軽にどうぞ。</p>
+  <p style="color:rgba(255,255,255,.9);font-size:15px;font-weight:700;margin-bottom:6px;">👇 友達登録（フォロー）して予約して下さい。</p>
+  <a class="btn-line-band" href="https://linevoom.line.me/user/_dS1NRYmkLk4_KUhWC9P3d1DmcpoeGOwIdPqc95s?utm_medium=osx&utm_source=desktop&utm_campaign=OA_Profile" target="_blank" rel="noopener" style="font-size:18px;padding:18px 46px;">
+    <svg viewBox="0 0 24 24" width="30" height="30" fill="#fff"><path d="M12 2C6.477 2 2 6.145 2 11.259c0 4.213 2.733 7.794 6.686 9.333.245.09.46.172.46.172s-.032.12-.097.311c-.057.177-.146.46-.146.46s-.021.11.117.151c.138.04.594-.082.594-.082s7.41-4.139 10.003-6.85C20.883 13.37 22 12.374 22 11.259 22 6.145 17.523 2 12 2z"/></svg>
+    LINE友だち追加（無料）
+  </a>
+  <p class="note-sub">完全予約制 ／ 土日祝 9:00〜18:00 ／ 富山県射水市黒河3805</p>
+  <div class="tags">
+    <span class="tag">#腰痛</span>
+    <span class="tag">#肩こり</span>
+    <span class="tag">#整体院</span>
+    <span class="tag">#膝痛</span>
+    <span class="tag">#肩の痛み</span>
+    <span class="tag">#KYT</span>
+    <span class="tag">#射水市</span>
+    <span class="tag">#富山</span>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="f-name">きときと整体院</p>
+  <p>富山県射水市黒河3805 ／ 営業：土日祝 9:00〜18:00</p>
+  <p style="margin-top:8px;">
+    <a href="https://linevoom.line.me/user/_dS1NRYmkLk4_KUhWC9P3d1DmcpoeGOwIdPqc95s?utm_medium=osx&utm_source=desktop&utm_campaign=OA_Profile" target="_blank">LINE予約はこちら</a>
+  </p>
+  <p style="margin-top:14px;">© 2025 きときと整体院. All rights reserved.</p>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('vis'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-up').forEach((el, i) => {
+    el.style.transitionDelay = (i % 4) * 0.07 + 's';
+    obs.observe(el);
+  });
+</script>
+</body>
+</html>
