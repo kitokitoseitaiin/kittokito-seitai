@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- 外側の円 -->
+  <circle cx="60" cy="60" r="56" fill="#eaf4fc" stroke="#1a7fc4" stroke-width="3"/>
+
+  <!-- 太陽の光線 -->
+  <g stroke="#5ab4e8" stroke-width="2" opacity="0.6">
+    <line x1="60" y1="8" x2="60" y2="18"/>
+    <line x1="60" y1="102" x2="60" y2="112"/>
+    <line x1="8" y1="60" x2="18" y2="60"/>
+    <line x1="102" y1="60" x2="112" y2="60"/>
+    <line x1="23" y1="23" x2="30" y2="30"/>
+    <line x1="90" y1="90" x2="97" y2="97"/>
+    <line x1="97" y1="23" x2="90" y2="30"/>
+    <line x1="23" y1="97" x2="30" y2="90"/>
+  </g>
+
+  <!-- 水色の円（内側） -->
+  <circle cx="60" cy="52" r="26" fill="#1a7fc4" opacity="0.15"/>
+
+  <!-- ブリ（魚）の体 -->
+  <g transform="translate(60,50) rotate(-15)">
+    <!-- 胴体 -->
+    <ellipse cx="0" cy="0" rx="22" ry="9" fill="#0c4a8c"/>
+    <!-- 尾びれ -->
+    <polygon points="-22,-2 -32,-10 -32,10" fill="#1a7fc4"/>
+    <!-- 背びれ -->
+    <polygon points="-5,-9 0,-18 8,-9" fill="#1a7fc4"/>
+    <!-- 胸びれ -->
+    <polygon points="5,4 0,14 -8,6" fill="#1a7fc4"/>
+    <!-- 目 -->
+    <circle cx="18" cy="-2" r="3" fill="#fff"/>
+    <circle cx="19" cy="-2" r="1.5" fill="#0c4a8c"/>
+    <!-- 口 -->
+    <path d="M22,2 Q25,0 22,-2" stroke="#fff" stroke-width="1.2" fill="none"/>
+    <!-- 体の光沢ライン -->
+    <ellipse cx="2" cy="-3" rx="10" ry="3" fill="#5ab4e8" opacity="0.4"/>
+  </g>
+
+  <!-- テキスト「きときと」 -->
+  <text x="60" y="82" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="13" font-weight="700" fill="#0c4a8c">きときと</text>
+  <!-- テキスト「整体院」 -->
+  <text x="60" y="98" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="13" font-weight="700" fill="#0c4a8c">整体院</text>
+</svg>
