@@ -95,6 +95,36 @@
       nav a { color:var(--text-mid); text-decoration:none; font-size:13px; font-weight:600; transition:color .2s; }
       nav a:hover { color:var(--green-mid); }
     }
+    /* ハンバーガーメニュー */
+    .hamburger {
+      display:flex; flex-direction:column; justify-content:center; gap:5px;
+      width:36px; height:36px; background:none; border:none; cursor:pointer;
+      padding:4px; border-radius:6px;
+    }
+    .hamburger span {
+      display:block; width:24px; height:2.5px;
+      background:var(--green-dark); border-radius:2px;
+      transition: transform .3s, opacity .3s;
+    }
+    .hamburger.open span:nth-child(1){ transform:translateY(7.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2){ opacity:0; }
+    .hamburger.open span:nth-child(3){ transform:translateY(-7.5px) rotate(-45deg); }
+    @media(min-width:700px){ .hamburger { display:none; } }
+    .mobile-nav {
+      display:none; position:absolute; top:100%; left:0; right:0;
+      background:rgba(255,255,255,.98); backdrop-filter:blur(12px);
+      border-bottom:2px solid var(--green-pale);
+      box-shadow:0 6px 24px rgba(12,74,140,.12);
+      flex-direction:column; z-index:999;
+    }
+    .mobile-nav.open { display:flex; }
+    .mobile-nav a {
+      padding:14px 24px; color:var(--text-mid); text-decoration:none;
+      font-size:15px; font-weight:600; border-bottom:1px solid var(--green-pale);
+      transition:background .2s;
+    }
+    .mobile-nav a:last-child { border-bottom:none; }
+    .mobile-nav a:hover { background:var(--green-bg); }
     .header-line a {
       display:flex; align-items:center; gap:8px;
       background:var(--line-green); color:#fff;
@@ -177,15 +207,15 @@
     }
     .hero-note {
       font-size:17px; color:#fff; font-weight:700;
-      background: linear-gradient(135deg, #e67e22, #f39c12);
+      background: linear-gradient(135deg, #1a3a6b, #0c2a5a);
       display:inline-block; padding:10px 28px; border-radius:50px;
       margin-bottom:28px; letter-spacing:.04em;
-      box-shadow:0 4px 18px rgba(230,126,34,.55);
-      animation: pulse-orange 2s infinite;
+      box-shadow:0 4px 18px rgba(10,40,100,.45);
+      animation: pulse-navy 2s infinite;
     }
-    @keyframes pulse-orange {
-      0%,100%{ box-shadow:0 4px 18px rgba(230,126,34,.55); }
-      50%{ box-shadow:0 4px 28px rgba(230,126,34,.9); }
+    @keyframes pulse-navy {
+      0%,100%{ box-shadow:0 4px 18px rgba(10,40,100,.45); }
+      50%{ box-shadow:0 4px 28px rgba(10,40,100,.7); }
     }
     .hero-btns { display:flex; flex-wrap:wrap; gap:14px; justify-content:center; }
     .btn-line-hero {
@@ -531,6 +561,9 @@
     <a href="#pricing">料金</a>
     <a href="#access">アクセス</a>
   </nav>
+  <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+    <span></span><span></span><span></span>
+  </button>
   <div class="header-line">
     <a href="https://linevoom.line.me/user/_dS1NRYmkLk4_KUhWC9P3d1DmcpoeGOwIdPqc95s?utm_medium=osx&utm_source=desktop&utm_campaign=OA_Profile" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.145 2 11.259c0 4.213 2.733 7.794 6.686 9.333.245.09.46.172.46.172s-.032.12-.097.311c-.057.177-.146.46-.146.46s-.021.11.117.151c.138.04.594-.082.594-.082s7.41-4.139 10.003-6.85C20.883 13.37 22 12.374 22 11.259 22 6.145 17.523 2 12 2z"/></svg>
@@ -538,6 +571,12 @@
     </a>
   </div>
 </header>
+<div class="mobile-nav" id="mobileNav">
+  <a href="#reasons" onclick="closeMobileNav()">選ばれる理由</a>
+  <a href="#voices" onclick="closeMobileNav()">お客様の声</a>
+  <a href="#pricing" onclick="closeMobileNav()">料金</a>
+  <a href="#access" onclick="closeMobileNav()">アクセス</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -548,7 +587,7 @@
     <h1>
       <span class="accent-txt">きときと整体院</span>
     </h1>
-    <p class="hero-tagline">あなたの体の可能性を、ここから。</p>
+    <p class="hero-tagline">あなたの体の可能性を、<br>ここから。</p>
     <p class="hero-note">👇 友達登録（フォロー）して予約して下さい！</p>
     <p style="font-size:12px;color:rgba(255,255,255,.95);margin-bottom:28px;margin-top:-18px;text-shadow:0 1px 4px rgba(0,0,0,.8);">※完全予約制 ／ ご予約・ご相談はLINEより</p>
     <div class="hero-btns">
@@ -1121,6 +1160,18 @@
     el.style.transitionDelay = (i % 4) * 0.07 + 's';
     obs.observe(el);
   });
+
+  // ハンバーガーメニュー
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+  });
+  function closeMobileNav() {
+    hamburger.classList.remove('open');
+    mobileNav.classList.remove('open');
+  }
 </script>
 </body>
 </html>
