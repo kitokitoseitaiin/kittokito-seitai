@@ -400,6 +400,30 @@
     }
     .v-card.google .v-tag { background:#e8f0fe; color:#4285f4; }
     .v-disc { font-size:11px; color:#bbb; margin-top:8px; text-align:right; }
+    .v-photo { margin:12px 0 0; }
+    .v-photo img {
+      width:100%; height:auto; display:block;
+      border-radius:8px; border:1px solid var(--green-pale);
+      background:#fff;
+    }
+    .v-photo figcaption { font-size:11px; color:#aaa; margin-top:4px; text-align:center; }
+
+    /* ===== FAQ ===== */
+    .faq-list { max-width:760px; margin:0 auto; display:grid; gap:14px; }
+    .faq-item {
+      background:var(--gray-bg); border:1px solid var(--green-pale);
+      border-radius:var(--radius-sm); padding:20px 22px;
+    }
+    .faq-q {
+      font-size:15px; font-weight:700; color:var(--green-dark);
+      display:flex; gap:10px; align-items:flex-start; margin-bottom:8px;
+    }
+    .faq-q .q-mark {
+      flex-shrink:0; width:26px; height:26px; border-radius:50%;
+      background:var(--green-mid); color:#fff; font-size:14px;
+      display:flex; align-items:center; justify-content:center;
+    }
+    .faq-a { font-size:14px; line-height:1.9; color:var(--text-mid); padding-left:36px; }
 
     /* ===== BA ===== */
     .ba-grid { display:grid; gap:28px; }
@@ -616,6 +640,7 @@
     <a href="#voices">お客様の声</a>
     <a href="#pricing">料金</a>
     <a href="#access">アクセス</a>
+    <a href="#faq">Q&amp;A</a>
   </nav>
   <button class="hamburger" id="hamburger" aria-label="メニューを開く">
     <span></span><span></span><span></span>
@@ -633,6 +658,7 @@
   <a href="#voices" onclick="closeMobileNav()">お客様の声</a>
   <a href="#pricing" onclick="closeMobileNav()">料金</a>
   <a href="#access" onclick="closeMobileNav()">アクセス</a>
+  <a href="#faq" onclick="closeMobileNav()">Q&amp;A</a>
 </div>
 
 <!-- HERO -->
@@ -749,49 +775,13 @@
 
       <div class="v-card fade-up">
         <div class="v-quote">"</div>
-        <p class="v-text">あぐらがかけるようになりました。左側の肩こりがひどかったのがなおりました。腰が楽になりました。</p>
-        <div class="v-name">M.K様（70歳代・女性）</div>
-        <span class="v-tag">腰痛・肩こり</span>
-        <p class="v-disc">※結果には個人差があります</p>
-      </div>
-
-      <div class="v-card fade-up">
-        <div class="v-quote">"</div>
         <p class="v-text">具体的に身体がどうなっているのか知りたかったので、とても参考になりました。専門の人の意見と自分の感覚が一致することで身体のケアができると感じました。</p>
         <div class="v-name">Y.T様（48歳・男性）</div>
         <span class="v-tag">セルフケア</span>
-        <p class="v-disc">※結果には個人差があります</p>
-      </div>
-
-      <div class="v-card google fade-up">
-        <div class="v-quote">"</div>
-        <p class="v-text">先生はとても親身になって施術して下さいます。優しさが溢れ出てますよ！首凝りでいろんな整体に行きましたが、全身から調整していただき体の血流が良くなりポカポカして痛いところも緩和し、<strong>結果が出る整体院</strong>だと思います。是非一度、行ってみてください。</p>
-        <div class="v-name">Googleクチコミより</div>
-        <span class="v-tag">⭐ Google口コミ</span>
-        <p class="v-disc">※結果には個人差があります</p>
-      </div>
-
-      <div class="v-card fade-up">
-        <div class="v-quote">"</div>
-        <p class="v-text">（施術が）全く痛くないのに、とっても楽になりました。</p>
-        <div class="v-name">M.N様（女性）</div>
-        <span class="v-tag">痛みのない施術</span>
-        <p class="v-disc">※結果には個人差があります</p>
-      </div>
-
-      <div class="v-card fade-up">
-        <div class="v-quote">"</div>
-        <p class="v-text">長年、悩んできた違和感がなくなり、体がもとに戻った感じがします。ありがとうございます。</p>
-        <div class="v-name">N様（56歳・男性）</div>
-        <span class="v-tag">長年の悩み改善</span>
-        <p class="v-disc">※結果には個人差があります</p>
-      </div>
-
-      <div class="v-card google fade-up">
-        <div class="v-quote">"</div>
-        <p class="v-text">ゴルフで痛めた腰と足首の施術でお世話になりました。KYTという施術法を使っており、<strong>驚くほどスムーズに痛みが軽減</strong>されました。特に腰の可動域が広がり、スイングの違和感もなくなって感動しました。スポーツでの痛みに悩んでいる方におすすめします！</p>
-        <div class="v-name">Googleクチコミより</div>
-        <span class="v-tag">⭐ Google口コミ</span>
+        <figure class="v-photo">
+          <img src="voice_yt.jpg" alt="Y.T様の手書きアンケート" loading="lazy" />
+          <figcaption>実際にいただいた手書きアンケート</figcaption>
+        </figure>
         <p class="v-disc">※結果には個人差があります</p>
       </div>
 
@@ -800,30 +790,10 @@
         <p class="v-text">少しでも良くなればと思って治療を受けましたが、<strong>期待以上の効果でびっくり</strong>しました。ありがとうございました。</p>
         <div class="v-name">H.F様（81歳）</div>
         <span class="v-tag">期待以上の効果</span>
-        <p class="v-disc">※結果には個人差があります</p>
-      </div>
-
-      <div class="v-card fade-up">
-        <div class="v-quote">"</div>
-        <p class="v-text">施術前が10だとしたら3ぐらいに減り、ものすごく楽になりました。上を向いた時の首後ろの痛みはなくなりました。腰が1番つらかったので<strong>感激</strong>です。</p>
-        <div class="v-name">S様（50歳代・女性 ／ LINE感想）</div>
-        <span class="v-tag">腰痛・首痛</span>
-        <p class="v-disc">※結果には個人差があります</p>
-      </div>
-
-      <div class="v-card fade-up">
-        <div class="v-quote">"</div>
-        <p class="v-text">腰回りと背中が軽くなった。期待以上でした。感謝。</p>
-        <div class="v-name">S.K様（男性）</div>
-        <span class="v-tag">腰痛・背中</span>
-        <p class="v-disc">※結果には個人差があります</p>
-      </div>
-
-      <div class="v-card google fade-up">
-        <div class="v-quote">"</div>
-        <p class="v-text">82歳の父親を連れて行きました。「カラダが痛いのは歳のせいで仕方ない」と半信半疑でしたが、<strong>「整体とはいいものだ！」</strong>に変わるくらいに今では体が楽になったと喜んでます。お悩みを抱えた方は一度診てもらっては？思いがけずスッキリするかもです。</p>
-        <div class="v-name">Googleクチコミより（82歳のお父様）</div>
-        <span class="v-tag">⭐ Google口コミ</span>
+        <figure class="v-photo">
+          <img src="voice_hf.jpg" alt="H.F様の手書きアンケート" loading="lazy" />
+          <figcaption>実際にいただいた手書きアンケート</figcaption>
+        </figure>
         <p class="v-disc">※結果には個人差があります</p>
       </div>
 
@@ -832,6 +802,10 @@
         <p class="v-text">KYTを受けたくてネットで探して施術を受けました。すごく優しい手技で、身体も軽くなりました。ありがとうございます。</p>
         <div class="v-name">かっきー様（36歳・女性）</div>
         <span class="v-tag">KYT目的</span>
+        <figure class="v-photo">
+          <img src="voice_kakki.jpg" alt="かっきー様の手書きアンケート" loading="lazy" />
+          <figcaption>実際にいただいた手書きアンケート</figcaption>
+        </figure>
         <p class="v-disc">※結果には個人差があります</p>
       </div>
 
@@ -840,6 +814,10 @@
         <p class="v-text">硬い身体が段々柔軟されてく感じがあり終始気持ち良い施術でした。終わった後はエクササイズも教えていただき、<strong>大変満足</strong>しました。定期的にお願いしたいです。</p>
         <div class="v-name">小木曽 功様（43歳）</div>
         <span class="v-tag">柔軟性改善</span>
+        <figure class="v-photo">
+          <img src="voice_ogiso.jpg" alt="小木曽功様の手書きアンケート" loading="lazy" />
+          <figcaption>実際にいただいた手書きアンケート</figcaption>
+        </figure>
         <p class="v-disc">※結果には個人差があります</p>
       </div>
 
@@ -848,14 +826,10 @@
         <p class="v-text">続いていた首痛がやわらぎました！びっくりです！</p>
         <div class="v-name">J様（42歳・女性）</div>
         <span class="v-tag">首痛</span>
-        <p class="v-disc">※結果には個人差があります</p>
-      </div>
-
-      <div class="v-card fade-up">
-        <div class="v-quote">"</div>
-        <p class="v-text">優しい先生で、初めての経験ですが左肩の痛みが和らいだ感じです。しばらく通いたいと思います。</p>
-        <div class="v-name">S.O様（65歳）</div>
-        <span class="v-tag">肩の痛み</span>
+        <figure class="v-photo">
+          <img src="voice_j.jpg" alt="J様の手書きアンケート" loading="lazy" />
+          <figcaption>実際にいただいた手書きアンケート</figcaption>
+        </figure>
         <p class="v-disc">※結果には個人差があります</p>
       </div>
 
@@ -864,9 +838,95 @@
         <p class="v-text">丁寧にみていただき、ありがとうございました。痛みのあるところも、楽になりました。宿題をしっかりしていきたいです。</p>
         <div class="v-name">Y.K様（59歳）</div>
         <span class="v-tag">丁寧な施術</span>
+        <figure class="v-photo">
+          <img src="voice_yk.png" alt="Y.K様の手書きアンケート" loading="lazy" />
+          <figcaption>実際にいただいた手書きアンケート</figcaption>
+        </figure>
         <p class="v-disc">※結果には個人差があります</p>
       </div>
 
+      <div class="v-card fade-up">
+        <div class="v-quote">"</div>
+        <p class="v-text"><strong>あぐらがかけるようになりました。</strong>左側のひどかった肩こりも、腰も楽になりました。</p>
+        <div class="v-name">M.K様（70歳代・女性）</div>
+        <span class="v-tag">肩こり・腰</span>
+        <figure class="v-photo">
+          <img src="voice_mk.jpg" alt="M.K様の手書きアンケート" loading="lazy" />
+          <figcaption>実際にいただいた手書きアンケート</figcaption>
+        </figure>
+        <p class="v-disc">※結果には個人差があります</p>
+      </div>
+
+      <div class="v-card fade-up">
+        <div class="v-quote">"</div>
+        <p class="v-text">全く痛くないのに、<strong>とっても楽になりました。</strong></p>
+        <div class="v-name">M.N様（女性）</div>
+        <span class="v-tag">優しい施術</span>
+        <figure class="v-photo">
+          <img src="voice_mn.jpg" alt="M.N様の手書きアンケート" loading="lazy" />
+          <figcaption>実際にいただいた手書きアンケート</figcaption>
+        </figure>
+        <p class="v-disc">※結果には個人差があります</p>
+      </div>
+
+      <div class="v-card fade-up">
+        <div class="v-quote">"</div>
+        <p class="v-text">長年なやんでいた違和感がなくなり、<strong>体がもとに戻った感じがします。</strong>ありがとうございます。</p>
+        <div class="v-name">N様（56歳・男性）</div>
+        <span class="v-tag">長年の違和感</span>
+        <figure class="v-photo">
+          <img src="voice_n56.jpg" alt="N様の手書きアンケート" loading="lazy" />
+          <figcaption>実際にいただいた手書きアンケート</figcaption>
+        </figure>
+        <p class="v-disc">※結果には個人差があります</p>
+      </div>
+
+      <div class="v-card google fade-up">
+        <div class="v-quote">"</div>
+        <p class="v-text">先生はとても親身になって施術して下さいます。優しさが溢れ出てますよ！首凝りでいろんな整体に行きましたが、全身から調整していただき体の血流が良くなりポカポカして痛いところも緩和し、<strong>結果が出る整体院</strong>だと思います。是非一度、行ってみてください。</p>
+        <div class="v-name">Googleクチコミより</div>
+        <span class="v-tag">⭐ Google口コミ</span>
+        <figure class="v-photo">
+          <img src="google1.png" alt="実際のGoogle口コミ画面" loading="lazy" />
+          <figcaption>実際のGoogle口コミ画面</figcaption>
+        </figure>
+        <p class="v-disc">※結果には個人差があります</p>
+      </div>
+
+      <div class="v-card google fade-up">
+        <div class="v-quote">"</div>
+        <p class="v-text">ゴルフで痛めた腰と足首の施術でお世話になりました。KYTという施術法を使っており、<strong>驚くほどスムーズに痛みが軽減</strong>されました。特に腰の可動域が広がり、スイングの違和感もなくなって感動しました。スポーツでの痛みに悩んでいる方におすすめします！</p>
+        <div class="v-name">Googleクチコミより</div>
+        <span class="v-tag">⭐ Google口コミ</span>
+        <figure class="v-photo">
+          <img src="google2.jpg" alt="実際のGoogle口コミ画面" loading="lazy" />
+          <figcaption>実際のGoogle口コミ画面</figcaption>
+        </figure>
+        <p class="v-disc">※結果には個人差があります</p>
+      </div>
+
+      <div class="v-card google fade-up">
+        <div class="v-quote">"</div>
+        <p class="v-text">82歳の父親を連れて行きました。「カラダが痛いのは歳のせいで仕方ない」と半信半疑でしたが、<strong>「整体とはいいものだ！」</strong>に変わるくらいに今では体が楽になったと喜んでます。お悩みを抱えた方は一度診てもらっては？思いがけずスッキリするかもです。</p>
+        <div class="v-name">Googleクチコミより（82歳のお父様）</div>
+        <span class="v-tag">⭐ Google口コミ</span>
+        <figure class="v-photo">
+          <img src="google4.jpg" alt="実際のGoogle口コミ画面" loading="lazy" />
+          <figcaption>実際のGoogle口コミ画面</figcaption>
+        </figure>
+        <p class="v-disc">※結果には個人差があります</p>
+      </div>
+
+    </div>
+
+    <div class="fade-up" style="margin-top:40px;">
+      <h3 style="font-size:16px;color:var(--green-dark);margin-bottom:6px;">📸 セミナー・整体イベントでの活動</h3>
+      <p style="font-size:13px;color:var(--text-mid);margin-bottom:14px;">KYTセミナーや整体イベントに参加し、日々技術の研鑽を続けています。</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;align-items:start;">
+        <img src="event1.webp" alt="整体イベントでの施術の様子" loading="lazy" style="width:100%;height:auto;border-radius:12px;display:block;" />
+        <img src="event2.webp" alt="整体イベントにて" loading="lazy" style="width:100%;height:auto;border-radius:12px;display:block;" />
+        <img src="event3.webp" alt="整体イベントで施術を受けられた方の笑顔" loading="lazy" style="width:100%;height:auto;border-radius:12px;display:block;" />
+      </div>
     </div>
   </div>
 </section>
@@ -1038,7 +1098,20 @@
     <div class="p-main fade-up">
       <div class="p-main-amt" style="font-size:clamp(36px,6vw,56px);">¥10,000</div>
       <div class="p-main-unit">税込 ／ 1回</div>
-      
+      <div style="max-width:420px;margin:0 auto;text-align:left;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:18px 22px;position:relative;">
+        <p style="font-size:13px;font-weight:700;color:rgba(255,255,255,.85);margin-bottom:10px;text-align:center;">この料金にすべて含まれます</p>
+        <ul style="list-style:none;font-size:14px;line-height:2.1;color:#fff;">
+          <li>✅ カウンセリング</li>
+          <li>✅ 姿勢・動きの検査</li>
+          <li>✅ KYT整体の施術</li>
+          <li>✅ 自宅でできる宿題エクササイズの指導</li>
+        </ul>
+        <p style="font-size:13px;font-weight:700;color:#ffd76a;margin-top:10px;text-align:center;">追加料金は一切ありません</p>
+      </div>
+    </div>
+
+    <div class="fade-up" style="background:var(--green-bg);border-left:4px solid var(--green-mid);border-radius:var(--radius-sm);padding:16px 20px;margin-bottom:20px;font-size:14px;line-height:1.9;color:var(--text-dark);">
+      💡 高額な回数券（5万〜10万円）の販売は一切ありません。お支払いは<strong>1回ごと</strong>です。
     </div>
 
     <div class="p-note fade-up">
@@ -1127,6 +1200,35 @@
         <div class="r-img-card">
           <img src="route_ng3.webp" alt="進入禁止ルート3" loading="lazy" style="width:100%;border-radius:8px;display:block;" />
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="eyebrow">Q &amp; A</span>
+      <h2>よくある<span class="acc">ご質問</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item fade-up">
+        <div class="faq-q"><span class="q-mark">Q</span>何を着ていけばいいですか？</div>
+        <div class="faq-a">動きやすい服装でお越しください。ジャージやスウェットなど、楽な服装がおすすめです。仕事帰りなどで難しい場合はご相談ください。</div>
+      </div>
+      <div class="faq-item fade-up">
+        <div class="faq-q"><span class="q-mark">Q</span>バキバキされますか？</div>
+        <div class="faq-a">されません。当院のKYT整体は、バキバキ・ボキボキしない優しい手技です。強い刺激が苦手な方やご高齢の方も安心して受けていただけます。</div>
+      </div>
+      <div class="faq-item fade-up">
+        <div class="faq-q"><span class="q-mark">Q</span>勧誘はありますか？</div>
+        <div class="faq-a">一切ありません。回数券の販売・物販・無理な通院のご提案などは行っておりませんので、安心してお越しください。</div>
+      </div>
+      <div class="faq-item fade-up">
+        <div class="faq-q"><span class="q-mark">Q</span>駐車場はありますか？</div>
+        <div class="faq-a">あります。お車でそのままお越しください。場所が分かりにくい場合は、LINEでお気軽にお尋ねください。</div>
       </div>
     </div>
   </div>
