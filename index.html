@@ -77,6 +77,12 @@
       color:#0b6e2f; font-weight:700; text-decoration:none;
       border-bottom:2px solid #06c755; padding-bottom:1px;
     }
+    /* 休業案内は落ち着いた青系 */
+    .notice-bar.notice-closed {
+      background:var(--green-bg); color:var(--text-dark);
+      border-bottom:2px solid var(--green-pale);
+    }
+    .notice-bar.notice-closed strong { color:var(--green-dark); }
     @media(max-width:600px){
       .notice-bar { font-size:13px; }
       .notice-bar a { display:block; margin:4px 0 0; }
@@ -708,9 +714,10 @@
   <a href="#faq" onclick="closeMobileNav()">Q&amp;A</a>
 </div>
 
-<!-- 期間限定お知らせ（2026-09-21 24:00 JST で自動非表示） -->
-<div class="notice-bar" id="noticeBar" data-until="2026-09-21T23:59:59+09:00">
-  🎌 <strong>シルバーウィーク 9/22（火・祝）も営業しています！</strong>
+<!-- 期間限定お知らせ（2026-09-25 24:00 JST で自動非表示） -->
+<div class="notice-bar notice-closed" id="noticeBar" data-until="2026-09-25T23:59:59+09:00">
+  <strong>🗓 9月22日（火・祝日）、23日（水・祝日）は休業します。</strong><br>
+  次回は <strong>9月26日（土）、9月27日（日）</strong> 営業します。
   <a href="https://line.me/R/ti/p/@432hfglq" target="_blank" rel="noopener">ご予約はLINEから →</a>
 </div>
 <script>
