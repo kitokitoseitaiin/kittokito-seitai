@@ -700,7 +700,7 @@
       </a>
       <a class="btn-ghost" href="#reasons">選ばれる理由を見る ↓</a>
     </div>
-    <a href="#access" class="hero-car-warn">
+    <a href="#route" class="hero-car-warn">
       <span class="hcw-icon">🚗</span>
       <span class="hcw-body">
         <strong>お車でお越しの方へ</strong><br>
@@ -1232,7 +1232,7 @@
     </div>
 
     <!-- ナビ警告 -->
-    <div class="a-warn fade-up" style="margin-top:28px;">
+    <div class="a-warn fade-up" id="route" style="margin-top:28px;scroll-margin-top:92px;">
       <strong>⚠️ ナビをご利用の方へ必ずお読みください</strong><br>
       ナビで案内される道は狭く、乗用車が通りづらい場合があります。以下のルート案内をご参考ください。
     </div>
@@ -1297,7 +1297,7 @@
       <div class="faq-item fade-up">
         <div class="faq-q"><span class="q-mark">Q</span>駐車場はありますか？</div>
         <div class="faq-a">あります。お車でそのままお越しください。<br>
-        ただし、<strong style="color:#dc2626;">ナビが案内する道は狭く危険です。</strong>お越しの前に必ず<a href="#access" style="color:var(--green-mid);font-weight:700;">道順のご案内</a>をご確認ください。場所が分かりにくい場合は、LINEでお気軽にお尋ねください。</div>
+        ただし、<strong style="color:#dc2626;">ナビが案内する道は狭く危険です。</strong>お越しの前に必ず<a href="#route" style="color:var(--green-mid);font-weight:700;">道順のご案内</a>をご確認ください。場所が分かりにくい場合は、LINEでお気軽にお尋ねください。</div>
       </div>
     </div>
   </div>
@@ -1394,25 +1394,36 @@
     const stop = () => { cancel = true; };
     ['touchstart', 'wheel'].forEach(ev => window.addEventListener(ev, stop, { passive: true }));
 
+    const goTo = (el) => {
+      cancel = false;
+      const jump = () => {
+        if (cancel) return;
+        const offset = document.querySelector('header').offsetHeight + 8;
+        const top = el.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'auto' });
+      };
+      jump();
+      // 画像読み込みでずれた分を数回にわたり補正
+      [150, 400, 800, 1500, 2500].forEach(t => setTimeout(jump, t));
+    };
+
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
         const id = a.getAttribute('href').slice(1);
         const el = id && document.getElementById(id);
         if (!el) return;
         e.preventDefault();
-        cancel = false;
-        const jump = () => {
-          if (cancel) return;
-          const offset = document.querySelector('header').offsetHeight + 8;
-          const top = el.getBoundingClientRect().top + window.scrollY - offset;
-          window.scrollTo({ top, behavior: 'auto' });
-        };
-        jump();
-        // 画像読み込みでずれた分を数回にわたり補正
-        [150, 400, 800, 1500].forEach(t => setTimeout(jump, t));
+        goTo(el);
         history.replaceState(null, '', '#' + id);
       });
     });
+
+    // LINEなどから「#route」付きのURLで開かれたときも正しい位置へ
+    const initial = location.hash && document.getElementById(location.hash.slice(1));
+    if (initial) {
+      goTo(initial);
+      window.addEventListener('load', () => goTo(initial));
+    }
   })();
 </script>
 </body>
