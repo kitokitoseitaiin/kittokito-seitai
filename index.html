@@ -28,7 +28,7 @@
       --radius-sm:   10px;
     }
     * { margin:0; padding:0; box-sizing:border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: auto; }
     body {
       font-family: 'Noto Sans JP', sans-serif;
       color: var(--text-dark);
@@ -1387,6 +1387,33 @@
     navOverlay.classList.remove('open');
   }
   navOverlay.addEventListener('click', closeMobileNav);
+
+  // ページ内リンク：遅延読み込み画像で高さが変わっても確実に目的地へ届くようにする
+  (function () {
+    let cancel = false;
+    const stop = () => { cancel = true; };
+    ['touchstart', 'wheel'].forEach(ev => window.addEventListener(ev, stop, { passive: true }));
+
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href').slice(1);
+        const el = id && document.getElementById(id);
+        if (!el) return;
+        e.preventDefault();
+        cancel = false;
+        const jump = () => {
+          if (cancel) return;
+          const offset = document.querySelector('header').offsetHeight + 8;
+          const top = el.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top, behavior: 'auto' });
+        };
+        jump();
+        // 画像読み込みでずれた分を数回にわたり補正
+        [150, 400, 800, 1500].forEach(t => setTimeout(jump, t));
+        history.replaceState(null, '', '#' + id);
+      });
+    });
+  })();
 </script>
 </body>
 </html>
