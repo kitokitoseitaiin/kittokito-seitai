@@ -89,6 +89,13 @@
     }
     .logo-text .main { display:block; font-size:18px; font-weight:700; color:var(--green-dark); line-height:1.2; }
     .logo-text .sub { display:block; font-size:11px; color:var(--text-light); }
+    .logo-text .sub-home { display:none; }
+    @media(max-width:600px){
+      /* スマホでは「タップでトップへ」の案内を表示 */
+      .logo-text .sub { display:none; }
+      .logo-text .sub-home { display:block; font-size:11px; font-weight:700; color:var(--green-mid); white-space:nowrap; }
+      .logo-text .main { font-size:17px; }
+    }
     nav { display:none; }
     @media(min-width:700px){
       nav { display:flex; gap:18px; align-items:center; }
@@ -647,12 +654,13 @@
 </div>
 
 <!-- HEADER -->
-<header>
-  <a class="header-logo" href="#">
+<header id="top">
+  <a class="header-logo" href="#top" title="トップページへ戻る" aria-label="トップページへ戻る">
     <img src="./logo.png" alt="きときと整体院ロゴ" class="logo-img" onerror="this.src='./logo.svg'"/>
     <div class="logo-text">
       <span class="main">きときと整体院</span>
       <span class="sub">富山県射水市 ／ KYT専門整体</span>
+      <span class="sub-home">🏠 タップでトップへ戻る</span>
     </div>
   </a>
   <nav>
@@ -674,6 +682,7 @@
 </header>
 <div class="nav-overlay" id="navOverlay"></div>
 <div class="mobile-nav" id="mobileNav">
+  <a href="#top" onclick="closeMobileNav()">🏠 トップページ</a>
   <a href="#reasons" onclick="closeMobileNav()">選ばれる理由</a>
   <a href="#voices" onclick="closeMobileNav()">お客様の声</a>
   <a href="#pricing" onclick="closeMobileNav()">料金</a>
@@ -1259,13 +1268,13 @@
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;">
         <div class="r-img-card">
-          <img src="route_ng1.webp" alt="進入禁止ルート1" loading="lazy" style="width:100%;border-radius:8px;display:block;" />
+          <img src="route_ng1.webp?v=2" alt="進入禁止ルート1" loading="lazy" style="width:100%;border-radius:8px;display:block;" />
         </div>
         <div class="r-img-card">
-          <img src="route_ng2.webp" alt="進入禁止ルート2" loading="lazy" style="width:100%;border-radius:8px;display:block;" />
+          <img src="route_ng2.webp?v=2" alt="進入禁止ルート2" loading="lazy" style="width:100%;border-radius:8px;display:block;" />
         </div>
         <div class="r-img-card">
-          <img src="route_ng3.webp" alt="進入禁止ルート3" loading="lazy" style="width:100%;border-radius:8px;display:block;" />
+          <img src="route_ng3.webp?v=2" alt="進入禁止ルート3" loading="lazy" style="width:100%;border-radius:8px;display:block;" />
         </div>
       </div>
     </div>
@@ -1396,6 +1405,8 @@
 
     const goTo = (el) => {
       cancel = false;
+      // トップへ（ヘッダーは画面固定なので位置計算せず最上部へ）
+      if (el.id === 'top') { window.scrollTo({ top: 0, behavior: 'auto' }); return; }
       const jump = () => {
         if (cancel) return;
         const offset = document.querySelector('header').offsetHeight + 8;
