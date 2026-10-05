@@ -570,9 +570,12 @@
       color:rgba(255,255,255,.9); margin-bottom:12px;
     }
     .p-main-amt {
-      font-size:clamp(44px,8vw,72px); font-weight:900; line-height:1;
-      color:#fff; margin-bottom:6px;
+      font-size:clamp(30px,5vw,38px); font-weight:700; line-height:1.2;
+      color:#fff; margin-bottom:6px; letter-spacing:.01em;
     }
+    .p-tax { font-size:15px; font-weight:400; color:rgba(255,255,255,.8); margin-left:6px; }
+    .p-allin { font-size:14px; color:rgba(255,255,255,.8); margin-top:18px; }
+    .p-main-foot { font-size:13px; color:#ffd76a; font-weight:700; margin-top:6px; line-height:1.9; }
     .p-main-unit { font-size:15px; color:rgba(255,255,255,.7); margin-bottom:18px; }
     .p-main-desc { font-size:15px; color:rgba(255,255,255,.88); line-height:1.8; margin-bottom:28px; max-width:520px; margin-left:auto; margin-right:auto; }
     /* サブ：体験コース・サポート制度 */
@@ -1214,18 +1217,18 @@
     <!-- 通常施術：メイン大カード -->
     <div class="p-main fade-up">
       <div class="p-main-name">KYT・KXT整体の施術</div>
-      <div class="p-main-amt" style="font-size:clamp(36px,6vw,56px);">¥10,000</div>
-      <div class="p-main-unit">税込 ／ 1回</div>
       <div style="max-width:420px;margin:0 auto;text-align:left;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:18px 22px;position:relative;">
-        <p style="font-size:13px;font-weight:700;color:rgba(255,255,255,.85);margin-bottom:10px;text-align:center;">この料金にすべて含まれます</p>
+        <p style="font-size:13px;font-weight:700;color:rgba(255,255,255,.85);margin-bottom:10px;text-align:center;">次のすべてが含まれています</p>
         <ul style="list-style:none;font-size:14px;line-height:2.1;color:#fff;">
           <li>✅ カウンセリング</li>
           <li>✅ 姿勢・動きの検査</li>
           <li>✅ KYT・KXT整体の施術</li>
           <li>✅ 自宅でできる宿題エクササイズの指導</li>
         </ul>
-        <p style="font-size:13px;font-weight:700;color:#ffd76a;margin-top:10px;text-align:center;">追加料金は一切ありません</p>
       </div>
+      <p class="p-allin">これらすべて込みで</p>
+      <div class="p-main-amt">¥10,000<span class="p-tax">（税込・1回）</span></div>
+      <p class="p-main-foot">追加料金なし　／　回数券なし<br>お支払いは1回ごと</p>
     </div>
 
     <div class="fade-up" style="background:var(--green-bg);border-left:4px solid var(--green-mid);border-radius:var(--radius-sm);padding:16px 20px;margin-bottom:20px;font-size:14px;line-height:1.9;color:var(--text-dark);">
