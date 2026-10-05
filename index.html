@@ -574,8 +574,9 @@
       color:#fff; margin-bottom:6px; letter-spacing:.01em;
     }
     .p-tax { font-size:15px; font-weight:400; color:rgba(255,255,255,.8); margin-left:6px; }
-    .p-allin { font-size:14px; color:rgba(255,255,255,.8); margin-top:18px; }
     .p-main-foot { font-size:13px; color:#ffd76a; font-weight:700; margin-top:6px; line-height:1.9; }
+    .p-main-foot span { white-space:nowrap; }
+    .p-li-long { white-space:nowrap; }
     .p-main-unit { font-size:15px; color:rgba(255,255,255,.7); margin-bottom:18px; }
     .p-main-desc { font-size:15px; color:rgba(255,255,255,.88); line-height:1.8; margin-bottom:28px; max-width:520px; margin-left:auto; margin-right:auto; }
     /* サブ：体験コース・サポート制度 */
@@ -1217,18 +1218,17 @@
     <!-- 通常施術：メイン大カード -->
     <div class="p-main fade-up">
       <div class="p-main-name">KYT・KXT整体の施術</div>
-      <div style="max-width:420px;margin:0 auto;text-align:left;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:18px 22px;position:relative;">
-        <p style="font-size:13px;font-weight:700;color:rgba(255,255,255,.85);margin-bottom:10px;text-align:center;">次のすべてが含まれています</p>
+      <div class="p-main-amt">¥10,000<span class="p-tax">（税込・1回）</span></div>
+      <p class="p-main-foot"><span>追加料金なし</span>　／　<span>回数券なし</span>　／　<span>お支払いは1回ごと</span></p>
+      <div style="max-width:420px;margin:18px auto 0;text-align:left;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:18px 22px;position:relative;">
+        <p style="font-size:13px;font-weight:700;color:rgba(255,255,255,.85);margin-bottom:10px;text-align:center;">この料金に次のすべてが含まれます</p>
         <ul style="list-style:none;font-size:14px;line-height:2.1;color:#fff;">
           <li>✅ カウンセリング</li>
           <li>✅ 姿勢・動きの検査</li>
           <li>✅ KYT・KXT整体の施術</li>
-          <li>✅ 自宅でできる宿題エクササイズの指導</li>
+          <li class="p-li-long">✅ 宿題エクササイズの指導</li>
         </ul>
       </div>
-      <p class="p-allin">これらすべて込みで</p>
-      <div class="p-main-amt">¥10,000<span class="p-tax">（税込・1回）</span></div>
-      <p class="p-main-foot">追加料金なし　／　回数券なし<br>お支払いは1回ごと</p>
     </div>
 
     <div class="fade-up" style="background:var(--green-bg);border-left:4px solid var(--green-mid);border-radius:var(--radius-sm);padding:16px 20px;margin-bottom:20px;font-size:14px;line-height:1.9;color:var(--text-dark);">
@@ -1246,9 +1246,9 @@
       <p style="font-size:14px;line-height:1.9;color:var(--text-mid);max-width:520px;margin:0 auto 10px;">
         当院の施術で実際に使用している「マル整まくら」をご購入いただけます。
       </p>
-      <p style="font-size:18px;font-weight:900;color:var(--green-dark);margin-bottom:10px;">
-        22,000円<span style="font-size:13px;font-weight:700;color:var(--text-mid);">（税込）</span>
-        <span style="font-size:12px;font-weight:400;color:var(--text-light);">※配送をご希望の場合は送料別途</span>
+      <p style="font-size:26px;font-weight:900;color:var(--green-dark);margin-bottom:10px;">
+        22,000円<span style="font-size:15px;font-weight:700;color:var(--text-mid);">（税込）</span>
+        <span style="display:block;font-size:12px;font-weight:400;color:var(--text-light);margin-top:4px;">※配送をご希望の場合は送料別途</span>
       </p>
       <p style="font-size:13px;color:var(--text-mid);">
         数に限りがありますので、ご希望の方は<strong>LINEからお気軽にお問い合わせ</strong>ください。
@@ -1310,7 +1310,7 @@
     <!-- こちらへどうぞ -->
     <div class="fade-up" style="margin-top:28px;">
       <h3 class="a-h3" style="color:var(--green-dark);margin-bottom:14px;">✅ こちらへどうぞ</h3>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:16px;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(360px,100%),1fr));gap:16px;">
         <div class="r-img-card">
           <img src="route1.webp?v=2" alt="ルート案内1" loading="lazy" style="width:100%;border-radius:8px;display:block;" />
           <p>🚗 黒河の交差点から来られる場合、北方向へ300m程直進してください。一旦狭い道になりますが、そのまま直進してください。</p>
@@ -1327,7 +1327,7 @@
       <div style="background:#fff1f2;border:2px solid #fca5a5;border-radius:var(--radius-sm);padding:14px 18px;margin-bottom:14px;">
         <strong style="color:#dc2626;">⚠️ この道には入らないでください！道が狭くなり危険です</strong>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:16px;">
         <div class="r-img-card">
           <img src="route_ng1.webp?v=2" alt="進入禁止ルート1" loading="lazy" style="width:100%;border-radius:8px;display:block;" />
         </div>
